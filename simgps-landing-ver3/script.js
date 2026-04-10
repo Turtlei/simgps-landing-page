@@ -70,9 +70,10 @@ document.querySelectorAll(".gallery img").forEach(img=>{
     };
 });
 
-popup.onclick = ()=>
+popup.onclick = ()=> {
     popup.style.display="none";
     popup.classList.remove("show")
+};
 
 // BTT BUTTON
 const topBtn =
