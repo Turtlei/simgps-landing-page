@@ -1,19 +1,3 @@
-// MENU
-// const toggle = 
-// document.querySelector(".menu-toggle");
-// const nav =
-// document.querySelector(".nav");
-
-// toggle.onclick = () => {
-//     nav.classList.toggle("show")
-// };
-
-// document.querySelectorAll(".nav a").forEach(link => {
-//     link.onclick = () => {
-//         nav.classList.remove("show");
-//     };
-// });
-
 const toggle = document.getElementById("menu-toggle");
 const nav = document.querySelector(".nav");
 
@@ -60,3 +44,47 @@ rootMargin: "0px 0px -50px 0px"
 faders.forEach(el => observer.observe(el));
 
 });
+
+window.addEventListener("scroll", () => {
+    const navbar =
+    document.querySelector(".navbar");
+
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+});
+
+// GALLERY POPUP
+const popup =
+document.getElementById("popup");
+const popupImg =
+document.getElementById("popup-img");
+
+document.querySelectorAll(".gallery img").forEach(img=>{
+    img.onclick = ()=>{
+        popup.style.display="flex";
+        popup.classList.add("show");
+        popupImg.src = img.src;
+    };
+});
+
+popup.onclick = ()=>
+    popup.style.display="none";
+    popup.classList.remove("show")
+
+// BTT BUTTON
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll", ()=>{
+    if(window.scrollY > 200){
+        topBtn.style.display = "block";
+    }else{
+        topBtn.style.display = "none";
+    }
+});
+
+topBtn.onclick = () =>
+    window.scrollTo({top:0,behavior:"smooth"});

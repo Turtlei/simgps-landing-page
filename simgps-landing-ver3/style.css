@@ -22,13 +22,35 @@ section {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #0f4c81;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    color: #0f4c81;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     z-index: 9999;
+}
+
+.navbar .logo,
+.navbar a {
+    color: #0f4c81;
+}
+
+.navbar.scrolled {
+    background: rgba(15, 76, 129, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+.navbar.scrolled .nav a {
+    color: #333;
+}
+
+.navbar.scrolled a,
+.navbar.scrolled .logo {
+    color: white;
 }
 
 .nav {
@@ -40,13 +62,13 @@ section {
     background: white;
     width: 200px;
 
-    opacity: 0;
+    opacity: 1 !important;
     transform: translateY(-20px);
-    pointer-events: none;
+    pointer-events: auto !important;
 
     transition: all 0.3s ease;
 }
-.nav .show {
+.nav.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
@@ -71,7 +93,7 @@ section {
 .nav a {
     padding: 15px;
     text-decoration: none;
-    color: #333 !important;
+    color: #333;
 }
 
 .menu-toggle {
@@ -149,19 +171,50 @@ section {
 }
 
 /* ABOUT */
-.about {
-    padding: 80px 20px;
-    text-align: center;
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+.about h2,
 .about p {
-    margin-top: 8px;
+    margin-left: 5px;
+}
+
+.about img {
+    width: 100%;
+    height: 560px;
+    border-radius: 5px;
+}
+
+@media(min-width:768px){
+    .about-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .about img {
+        width: 50%;
+        height: 80vh;
+    }
+
+    .about-text {
+        width: 50%;
+    }
 }
 
 /* SERVICES */
 .services {
     padding: 80px 20px;
     text-align: center;
+    background: linear-gradient(rgba(15, 76, 129, 0.6), rgba(15, 76, 129, 0.6)), url("assets/card-bg.jpg");
+    
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
 }
 
 .services h2 {
@@ -175,10 +228,30 @@ section {
 }
 
 .card {
-    padding: 25px;
-    background: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+
+    padding: 30px;
+    text-align: center;
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.card img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .fade-up {
@@ -209,7 +282,7 @@ section {
 
 .client-track img {
     margin-top: 20px;
-    height: 25px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
@@ -239,6 +312,26 @@ section {
     100%{transform: translateX(-50%);}
 }
 
+/* TESTIMONI */
+.testimoni {
+    padding: 80px 20px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.testi-container {
+    display: flex;
+    gap: 20px;
+    overflow: auto;
+}
+
+.testi {
+    min-width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
 /* GALLERY */
 .gallery {
     padding: 80px 20px;
@@ -252,7 +345,35 @@ section {
     margin-top: 20px;
 }
 
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup img {
+    max-width: 80%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    transform: scale(0.8);
+    transition: 0.3s;
+
+    .popup.show img {
+        transform: scale(1);
+    }
+}
+
 .gallery img {
+    display: block;
     width: 100%;
     border-radius: 10px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -263,7 +384,55 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+#topBtn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    display: none;
+    padding: 10px 15px;
+    border: none;
+    background: #0f4c81;
+    color: white;
+    border-radius: 5px;
+}
 
+.wa-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+    color: white;
+
+    border-radius: 50%;
+    font-size: 44px;
+    
+    z-index: 999;
+}
+
+/* KOLABORASI */
+.cta {
+    padding: 80px 20px;
+    text-align: center;
+    background: #0f4c81;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: white;
+    color: #0f4c81;
+    border-radius: 5px;
+}
 
 /* CONTACT */
 .contact {
@@ -279,6 +448,71 @@ footer {
     color: white;
 }
 
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background: #0f4c81;
+    color: white;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    text-align: center;
+}
+
+.footer-links div {
+    min-width: 150px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+/* SOCIAL */
+.social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.social a {
+    color: #0f4c81;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    transform:translateY(-3px);
+    opacity: 0.7;
+}
+
 /* DESKTOP */
 @media(min-width: 768px){
 
@@ -286,24 +520,22 @@ footer {
         display:flex !important;
         position:static;
         flex-direction:row;
+        background: none;
+        width: auto;
         opacity:1 !important;
         transform:none !important;
         pointer-events:auto !important;
 
 }
-    .nav {
-        display: flex !important;
-        position: static;
-        flex-direction: row;
-        background: none;
-        width: auto;
-        opacity: 1;
-    }
 
-    .nav a {
-        color: white !important;
+    .nav a.scrolled {
+        color: white;
         font-weight: 500;
         align-items: center;
+    }
+
+    .navbar.scrolled .nav a{
+        color: white;
     }
     
     .menu-toggle {
