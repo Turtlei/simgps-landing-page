@@ -2,9 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    max-width: 100%;
     font-family: Segoe UI;
-    
+}
+
+img {
+    max-width: 100%;
 }
 
 html {
@@ -18,6 +20,7 @@ body {
     box-sizing: border-box;
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
 }
 
 h2 {
@@ -152,15 +155,7 @@ section {
     height: 100vh;
     position: relative;
     overflow: hidden;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    padding: 0 !important;
 }
 
 .slide {
@@ -168,7 +163,8 @@ section {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
     opacity: 0;
     transition: 1s;
 }
