@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <meta property="og:url" content="https://turtlei.github.io/simgps-landing-page/simgps-landing-ver3/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="SIMGPS | PT Global Media Service" />
+	<meta property="og:description" content="SIMGPS | PT Global Media Service" />
+	<meta property="og:image" content="https://alfakesindonesia.com/assets/frontend/img/alfakes_og_meta.jpg" />
+    
     <link rel="stylesheet" href="style.css">
     <title>SIMGPS | PT Global Media Service</title>
 </head>
@@ -42,6 +49,16 @@
             <p>Solusi modern untuk pengelolaan perangkat medis</p>
         </div>
 
+        <div class="hero-controls">
+            <button class="slider-btn" id="heroPrev">&#8592;</button>
+            <div class="dots" id="heroDots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <button class="slider-btn" id="heroNext">&#8594;</button>
+        </div>
+
       </section>
 
       <!-- ABOUT -->
@@ -59,10 +76,17 @@
         </div>
 
         </div>
-        <div class="about-links">
-                <a href="https://wa.me" target="_blank" class="btn-outline">WhatsApp</a>
-                <a href="https://globalpromedika.co.id/" target="_blank" class="btn-outline">Website</a>
+
+            <div class="about-social">
+                <p>Follow Us :</p>
+                <a href="https://wa.me" target="_blank" class="btn-outline"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://globalpromedika.co.id/" target="_blank" class="btn-outline"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/index.php/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             </div>
+            
        </section>
 
        <!-- DIVIDER -->
@@ -144,42 +168,51 @@
             <h2>Testimoni</h2>
 
             <div class="testi-container">
+                <div class="testi-wrapper" id="testiWrapper">
 
-                <div class="testi">
-                    <img src="assets/logo-siloam.png" class="testi-logo">
-                    <p>"Pelayanan sangat profesional dan cepat."</p>
-                    <h4>- RS Siloam</h4>
-                </div>
+                    <div class="testi">
+                        <img src="assets/logo-siloam.png" class="testi-logo">
+                        <p>"Pelayanan sangat profesional dan cepat."</p>
+                        <h4>- RS Siloam</h4>
+                    </div>
 
-                <div class="testi">
-                    <img src="assets/logo-medistra.png" class="testi-logo">
-                    <p>"Sistem sangat membantu operasional kami."</p>
-                    <h4>- Medistra Hospital</h4>
-                </div>
+                    <div class="testi">
+                        <img src="assets/logo-medistra.png" class="testi-logo">
+                        <p>"Sistem sangat membantu operasional kami."</p>
+                        <h4>- Medistra Hospital</h4>
+                    </div>
 
-                <div class="testi">
-                    <img src="assets/logo-hermina.jpeg" class="testi-logo">
-                    <p>"Sistem SIMGPS sangat membantu dalam memonitoring alat medis secara real-time."</p>
-                    <h4>- RS Hermina</h4>
-                </div>
+                    <div class="testi">
+                        <img src="assets/logo-hermina.jpeg" class="testi-logo">
+                        <p>"Sistem SIMGPS sangat membantu dalam memonitoring alat medis secara real-time."</p>
+                        <h4>- RS Hermina</h4>
+                    </div>
 
-                <div class="testi">
-                    <img src="assets/logo-rs-pelni.png" class="testi-logo">
-                    <p>"Tim support sangat responsif dan profesional dalam menangani kebutuhan kami."</p>
-                    <h4>- RS Pelni</h4>
-                </div>
+                    <div class="testi">
+                        <img src="assets/logo-rs-pelni.png" class="testi-logo">
+                        <p>"Tim support sangat responsif dan profesional dalam menangani kebutuhan kami."</p>
+                        <h4>- RS Pelni</h4>
+                    </div>
 
-                <div class="testi">
-                    <img src="assets/logo-carolus.jpeg" class="testi-logo">
-                    <p>"Integrasi sistem berjalan lancar dan meningkatkan efisiensi operasional."</p>
-                    <h4>- RS Carolus</h4>
-                </div>
+                    <div class="testi">
+                        <img src="assets/logo-carolus.jpeg" class="testi-logo">
+                        <p>"Integrasi sistem berjalan lancar dan meningkatkan efisiensi operasional."</p>
+                        <h4>- RS Carolus</h4>
+                    </div>
 
-                <div class="testi">
-                    <img src="assets/logo-rsud-tamansari.jpg" class="testi-logo">
-                    <p>"Pelayanan kalibrasi dan maintenance sangat memuaskan dan tepat waktu."</p>
-                    <h4>- RSUD Tamansari</h4>
+                    <div class="testi">
+                        <img src="assets/logo-rsud-tamansari.jpg" class="testi-logo">
+                        <p>"Pelayanan kalibrasi dan maintenance sangat memuaskan dan tepat waktu."</p>
+                        <h4>- RSUD Tamansari</h4>
+                    </div>
+
                 </div>
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-btn" id="testiPrev">&#8592;</button>
+                <div class="dots" id="testiDots"></div>
+                <button class="slider-btn" id="testiNext">&#8594;</button>
             </div>
           </section>
 
@@ -216,13 +249,64 @@
 
         <!-- CONTACT -->
          <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-wrapper">
 
-            <h2>Contact</h2>
-            <p><strong>Email:</strong> info@simgps.com</p>
-            <p><strong>Phone:</strong> +62 812 3456 7890</p>
-            <p><strong>Address:</strong> Jakarta, Indonesia</p>
-            
-         </section>
+        <!-- LEFT: MAP -->
+        <div class="contact-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0!2d106.8!3d-6.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMDAuMCJTIDEwNsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sid!4v1"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <div class="contact-form">
+
+            <input type="text" placeholder="Nama Anda">
+            <input type="email" placeholder="Email Anda">
+
+            <!-- SUBJEK DROPDOWN -->
+            <select>
+                <option value="" disabled selected>Pilih Subjek</option>
+                <option>Request Akun Demo</option>
+                <option>Nanya Harga Barang</option>
+                <option>Informasi Layanan</option>
+                <option>Keluhan & Saran</option>
+            </select>
+
+            <!-- INSTANSI / PERORANGAN -->
+            <select id="tipeSelect" onchange="toggleInstansi()">
+                <option value="" disabled selected>Instansi atau Perorangan?</option>
+                <option value="instansi">Instansi</option>
+                <option value="perorangan">Perorangan</option>
+            </select>
+
+            <!-- DROPDOWN INSTANSI (hidden by default) -->
+            <select id="instansiSelect" style="display:none;">
+                <option value="" disabled selected>Pilih Instansi</option>
+                <option>RS Siloam</option>
+                <option>Medistra Hospital</option>
+                <option>RS Hermina</option>
+                <option>RS Pelni</option>
+                <option>RS Carolus</option>
+                <option>RSUD Tamansari</option>
+                <option>RS Premier Bintaro</option>
+                <option>PT Pertamina</option>
+                <option>PT Telkom Indonesia</option>
+                <option>Kementerian Kesehatan RI</option>
+            </select>
+
+            <textarea placeholder="Pesan Anda..."></textarea>
+            <button type="button">Kirim Pesan</button>
+
+        </div>
+    </div>
+</section>
 
          <!-- FOOTER -->
          <div class="footer-container">
@@ -231,7 +315,7 @@
              <div class="footer-left">
                 <h3>SIMGPS</h3>
                 <p>PT Global Promedika Service</p>
-                <p>Jakarta, Indonesia</p>
+                <p>Jl. Penjernihan 1 No.38, RW.8, Bend. Hilir, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10210</p>
              </div>
              
              <!-- RIGHT -->
@@ -256,22 +340,21 @@
                     <a href="https://globalpromedika.co.id/tentang-kami" target="_blank">Website</a>
                 </div>
 
-
               </div>
          </div>
 
-         <!-- SOCIAL -->
-         <div class="social">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-         </div>
-
+         <!-- FOOTER -->
          <footer>
-            <p>© 2026 PT Global Promedika Service</p>
-         </footer>
-
+            <div class="footer-bottom">
+                <p>© 2026 PT Global Promedika Service</p>
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
     <script src="script.js"></script>
     
 </body>
