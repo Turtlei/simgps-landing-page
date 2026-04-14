@@ -422,6 +422,10 @@ section {
     );
 }
 
+.testimoni h2 {
+    margin-bottom: 15px;
+}
+
 .testi-container {
     overflow: hidden;
     position: relative;
