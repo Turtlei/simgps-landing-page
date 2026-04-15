@@ -212,6 +212,79 @@ document.getElementById("testiPrev").addEventListener("click", () => {
     startTestiAuto();
 });
 
+// FORM VALIDATION
+function toggleInstansi() {
+    const tipe = document.getElementById("tipeSelect").value;
+    const instansiSelect = document.getElementById("instansiSelect");
+    instansiSelect.style.display = tipe === "instansi" ? "block" : "none";
+}
+
+function submitForm() {
+    let valid = true;
+
+    const nama = document.getElementById("inputNama");
+    const email = document.getElementById("inputEmail");
+    const phone = document.getElementById("inputPhone");
+    const subjek = document.getElementById("inputSubjek");
+    const tipe = document.getElementById("tipeSelect");
+    const instansi = document.getElementById("instansiSelect");
+    const pesan = document.getElementById("inputPesan");
+
+    // reset errors
+    document.querySelectorAll(".error-msg").forEach(e => e.textContent = "");
+
+    // nama
+    if (nama.value.trim() === "") {
+        document.getElementById("errNama").textContent = "Nama tidak boleh kosong.";
+        valid = false;
+    }
+
+    // email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value.trim())) {
+        document.getElementById("errEmail").textContent = "Format email tidak valid.";
+        valid = false;
+    }
+
+    // phone
+    const phoneRegex = /^[0-9]{9,13}$/;
+    if (!phoneRegex.test(phone.value.trim())) {
+        document.getElementById("errPhone").textContent = "Nomor telepon tidak valid (9-13 digit angka).";
+        valid = false;
+    }
+
+    // subjek
+    if (subjek.value === "" || subjek.value === null) {
+        document.getElementById("errSubjek").textContent = "Pilih subjek terlebih dahulu.";
+        valid = false;
+    }
+
+    // tipe
+    if (tipe.value === "" || tipe.value === null) {
+        document.getElementById("errTipe").textContent = "Pilih instansi atau perorangan.";
+        valid = false;
+    }
+
+    // instansi (only if tipe = instansi)
+    if (tipe.value === "instansi" && instansi.value === "") {
+        document.getElementById("errInstansi").textContent = "Pilih instansi Anda.";
+        valid = false;
+    }
+
+    // pesan
+    if (pesan.value.trim() === "") {
+        document.getElementById("errPesan").textContent = "Pesan tidak boleh kosong.";
+        valid = false;
+    }
+
+    if (valid) {
+        alert("Pesan berhasil dikirim! Kami akan segera menghubungi Anda.");
+        // reset form
+        document.querySelectorAll(".contact-form input, .contact-form textarea, .contact-form select").forEach(el => el.value = "");
+        document.getElementById("instansiSelect").style.display = "none";
+    }
+}
+
 // FADE UP
 const fadeEls = document.querySelectorAll(".fade-up");
 const observer = new IntersectionObserver((entries) => {
