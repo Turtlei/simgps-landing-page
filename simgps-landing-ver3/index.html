@@ -17,6 +17,11 @@
     <meta name="twitter:title" content="SIMGPS | PT Global Promedika Service">
     <meta name="twitter:description" content="Solusi modern untuk pengelolaan perangkat medis">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/Turtlei/simgps-landing-page/main/simgps-landing-ver3/assets/banner-1.jpg">    
+
+    <!-- [1] SHORTCUT ICON / FAVICON -->
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
         
     <link rel="stylesheet" href="style.css">
     <title>SIMGPS | PT Global Media Service</title>
@@ -54,6 +59,7 @@
         <div class="hero-text">
             <h1>Sistem Informasi Manajemen GPS</h1>
             <p>Solusi modern untuk pengelolaan perangkat medis</p>
+            <br><br><br><br><br>
         </div>
 
         <div class="hero-controls">
@@ -75,6 +81,7 @@
         <img src="assets/1.jpg">
         <div class="about-text">
         <h2>Tentang Kami</h2>
+        <!-- [3] Paragraf justify -->
         <p>
             Didirikan pada tahun 2007, PT. Global Promedika Service merupakan salah satu laboratorium terakreditasi di Indonesia yang menyediakan layanan kalibrasi dan pemeliharaan peralatan medis. Dengan dukungan lebih dari 70 tenaga elektromedis bersertifikasi, perusahaan berkomitmen memberikan layanan purna jual serta Inspection & Preventive Maintenance (IPM) untuk memastikan keamanan dan kualitas penggunaan alat medis di berbagai fasilitas kesehatan.
         </p>
@@ -99,40 +106,158 @@
        <!-- DIVIDER -->
         <div class="divider"></div>
 
-       <!-- SERVICES -->
+       <!-- [4] SERVICES - 8 cards dengan modal popup -->
         <section class="services fade-up" id="services">
 
             <h2>Layanan Kami</h2>
 
             <div class="service-grid">
 
-                <div class="card">
-                    <img src="https://img.icons8.com/fluency/96/database.png">
+                <div class="card" onclick="openModal('modal1')">
+                    <img src="assets/icon-inventory.png" onerror="this.src='https://img.icons8.com/fluency/96/database.png'">
                     <h3>Inventory Management</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit labore maiores atque accusantium! Tempore, cum excepturi nihil architecto consequuntur nesciunt!</p>
+                    <p>Pengelolaan inventaris perangkat medis secara terpusat dan real-time.</p>
                 </div>
-                <div class="card">
-                    <img src="https://img.icons8.com/?size=100&id=TspxxRprt9CN&format=png&color=000000">
+
+                <div class="card" onclick="openModal('modal2')">
+                    <img src="assets/icon-tracking.png" onerror="this.src='https://img.icons8.com/?size=100&id=TspxxRprt9CN&format=png&color=000000'">
                     <h3>Asset Tracking</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis dolor consequuntur ut explicabo velit totam necessitatibus omnis earum accusamus, id fuga.</p>
+                    <p>Pelacakan aset medis secara akurat di seluruh unit fasilitas kesehatan.</p>
                 </div>
-                <div class="card">
-                    <img src="https://img.icons8.com/?size=100&id=DVKimbavSlYT&format=png&color=000000">
+
+                <div class="card" onclick="openModal('modal3')">
+                    <img src="assets/icon-report.png" onerror="this.src='https://img.icons8.com/?size=100&id=DVKimbavSlYT&format=png&color=000000'">
                     <h3>Reporting</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quaerat molestias, debitis ad sunt ex nemo magnam alias cumque deserunt.</p>
+                    <p>Laporan komprehensif dan analitik mendalam untuk pengambilan keputusan.</p>
+                </div>
+
+                <div class="card" onclick="openModal('modal4')">
+                    <img src="assets/icon-kalibrasi.png" onerror="this.src='https://img.icons8.com/fluency/96/settings.png'">
+                    <h3>Kalibrasi Alat Medis</h3>
+                    <p>Layanan kalibrasi alat medis bersertifikat untuk menjamin akurasi dan keselamatan pasien.</p>
+                </div>
+
+                <div class="card" onclick="openModal('modal5')">
+                    <img src="assets/icon-ipm.png" onerror="this.src='https://img.icons8.com/fluency/96/maintenance.png'">
+                    <h3>Inspection & Preventive Maintenance</h3>
+                    <p>Program IPM terjadwal untuk memastikan alat medis selalu dalam kondisi optimal.</p>
+                </div>
+
+                <div class="card" onclick="openModal('modal6')">
+                    <img src="assets/icon-purnajual.png" onerror="this.src='https://img.icons8.com/fluency/96/technical-support.png'">
+                    <h3>Layanan Purna Jual</h3>
+                    <p>Dukungan teknis dan servis pasca pembelian yang responsif dan terpercaya.</p>
+                </div>
+
+                <div class="card" onclick="openModal('modal7')">
+                    <img src="assets/icon-monitoring.png" onerror="this.src='https://img.icons8.com/fluency/96/monitor.png'">
+                    <h3>Monitoring Real-Time</h3>
+                    <p>Pemantauan kondisi dan performa alat medis secara langsung melalui dashboard digital.</p>
+                </div>
+
+                <div class="card" onclick="openModal('modal8')">
+                    <img src="assets/icon-sertifikasi.png" onerror="this.src='https://img.icons8.com/fluency/96/certificate.png'">
+                    <h3>Sertifikasi & Akreditasi</h3>
+                    <p>Pengurusan dokumen sertifikasi dan akreditasi alat medis sesuai standar nasional dan internasional.</p>
                 </div>
 
             </div>
 
         </section>
 
+        <!-- MODALS LAYANAN -->
+        <div class="modal" id="modal1" onclick="closeModal(this)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal(document.getElementById('modal1'))">&times;</span>
+                <img src="assets/icon-inventory.png" onerror="this.src='https://img.icons8.com/fluency/96/database.png'" style="width:70px;margin-bottom:15px;">
+                <h3>Inventory Management</h3>
+                <p>Sistem Inventory Management SIMGPS memungkinkan pengelolaan seluruh inventaris perangkat medis secara terpusat, akurat, dan real-time. Setiap perangkat dapat dicatat mulai dari spesifikasi teknis, nomor seri, tanggal pembelian, hingga kondisi terkini.</p>
+                <p>Fitur ini dilengkapi dengan notifikasi otomatis untuk pengingat servis, masa garansi yang akan berakhir, serta peringatan stok suku cadang. Dengan tampilan dashboard yang intuitif, tim manajemen rumah sakit dapat memantau seluruh aset medis hanya dalam satu layar tanpa kertas dan proses manual yang memakan waktu.</p>
+                <p>Sistem ini juga mendukung ekspor laporan dalam format PDF dan Excel untuk keperluan audit internal maupun pelaporan ke dinas kesehatan terkait.</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal2" onclick="closeModal(this)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal(document.getElementById('modal2'))">&times;</span>
+                <img src="assets/icon-tracking.png" onerror="this.src='https://img.icons8.com/?size=100&id=TspxxRprt9CN&format=png&color=000000'" style="width:70px;margin-bottom:15px;">
+                <h3>Asset Tracking</h3>
+                <p>Fitur Asset Tracking pada SIMGPS memungkinkan pelacakan lokasi dan status seluruh aset medis di setiap unit atau lantai fasilitas kesehatan secara akurat dan efisien. Setiap perpindahan aset dapat direkam secara digital sehingga meminimalisir kehilangan atau kesalahan penempatan.</p>
+                <p>Dilengkapi dengan teknologi barcode dan QR code, proses scan aset menjadi lebih cepat dan mudah dilakukan oleh staf teknisi maupun petugas inventaris. Riwayat perpindahan aset tersimpan secara otomatis dan dapat diakses kapan saja untuk kebutuhan audit.</p>
+                <p>Integrasi dengan modul Inventory Management memastikan data selalu sinkron dan konsisten di seluruh sistem, sehingga tidak ada aset yang tidak terpantau.</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal3" onclick="closeModal(this)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal(document.getElementById('modal3'))">&times;</span>
+                <img src="assets/icon-report.png" onerror="this.src='https://img.icons8.com/?size=100&id=DVKimbavSlYT&format=png&color=000000'" style="width:70px;margin-bottom:15px;">
+                <h3>Reporting & Analytics</h3>
+                <p>Modul Reporting SIMGPS menghadirkan laporan komprehensif dan analitik mendalam yang dirancang untuk mendukung pengambilan keputusan manajemen fasilitas kesehatan. Laporan mencakup histori kalibrasi, jadwal pemeliharaan, kondisi aset, serta rekap biaya operasional.</p>
+                <p>Tersedia berbagai format visualisasi data seperti grafik batang, diagram pie, dan tabel interaktif yang memudahkan interpretasi data kompleks. Laporan dapat dijadwalkan untuk dikirimkan secara otomatis ke email manajemen setiap minggu atau bulan.</p>
+                <p>Fitur filter lanjutan memungkinkan pengguna untuk memfilter data berdasarkan periode waktu, jenis alat, unit, atau status perangkat — memberikan fleksibilitas penuh dalam analisis operasional.</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal4" onclick="closeModal(this)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal(document.getElementById('modal4'))">&times;</span>
+                <img src="assets/icon-kalibrasi.png" onerror="this.src='https://img.icons8.com/fluency/96/settings.png'" style="width:70px;margin-bottom:15px;">
+                <h3>Kalibrasi Alat Medis</h3>
+                <p>PT Global Promedika Service menyediakan layanan kalibrasi peralatan medis yang telah terakreditasi oleh Komite Akreditasi Nasional (KAN). Kalibrasi dilakukan oleh tenaga elektromedis bersertifikasi dengan menggunakan alat standar yang tertelusur secara internasional.</p>
+                <p>Layanan kalibrasi mencakup berbagai jenis perangkat medis seperti EKG, tensimeter digital, timbangan medis, inkubator bayi, infusion pump, syringe pump, autoclave, dan masih banyak lagi. Setiap hasil kalibrasi didokumentasikan dalam sertifikat resmi yang dapat digunakan untuk keperluan akreditasi rumah sakit.</p>
+                <p>Dengan sistem penjadwalan berbasis SIMGPS, fasilitas kesehatan dapat memantau jadwal kalibrasi secara proaktif dan memastikan tidak ada alat yang melewati masa berlaku kalibrasinya.</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal5" onclick="closeModal(this)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal(document.getElementById('modal5'))">&times;</span>
+                <img src="assets/icon-ipm.png" onerror="this.src='https://img.icons8.com/fluency/96/maintenance.png'" style="width:70px;margin-bottom:15px;">
+                <h3>Inspection & Preventive Maintenance</h3>
+                <p>Program Inspection & Preventive Maintenance (IPM) dari PT Global Promedika Service dirancang untuk memastikan seluruh perangkat medis di fasilitas kesehatan selalu berada dalam kondisi operasional terbaik. IPM dilakukan secara terjadwal sesuai standar pabrikan dan regulasi yang berlaku.</p>
+                <p>Setiap sesi IPM mencakup pemeriksaan visual, pengujian fungsi, pembersihan komponen, pelumasan mekanis, serta penggantian suku cadang yang diperlukan. Laporan hasil IPM diunggah langsung ke sistem SIMGPS sehingga manajemen dapat mengakses hasilnya secara real-time.</p>
+                <p>Program ini terbukti mampu mengurangi downtime peralatan medis hingga 60%, menekan biaya perbaikan darurat, dan meningkatkan umur pakai aset secara signifikan.</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal6" onclick="closeModal(this)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal(document.getElementById('modal6'))">&times;</span>
+                <img src="assets/icon-purnajual.png" onerror="this.src='https://img.icons8.com/fluency/96/technical-support.png'" style="width:70px;margin-bottom:15px;">
+                <h3>Layanan Purna Jual</h3>
+                <p>Layanan purna jual PT Global Promedika Service memberikan jaminan dukungan teknis yang komprehensif pasca pembelian dan instalasi perangkat medis. Tim teknisi kami siap merespons setiap keluhan dan permintaan servis dalam waktu cepat.</p>
+                <p>Tersedia pilihan kontrak servis tahunan yang mencakup kunjungan rutin, prioritas penanganan kerusakan, serta ketersediaan suku cadang original. Layanan ini dapat diakses melalui telepon, WhatsApp, email, maupun melalui fitur ticketing pada platform SIMGPS.</p>
+                <p>Dengan lebih dari 70 tenaga teknisi bersertifikat yang tersebar di berbagai wilayah, kami mampu memastikan respons cepat untuk fasilitas kesehatan di Jakarta dan sekitarnya.</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal7" onclick="closeModal(this)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal(document.getElementById('modal7'))">&times;</span>
+                <img src="assets/icon-monitoring.png" onerror="this.src='https://img.icons8.com/fluency/96/monitor.png'" style="width:70px;margin-bottom:15px;">
+                <h3>Monitoring Real-Time</h3>
+                <p>Fitur Monitoring Real-Time SIMGPS memungkinkan manajemen fasilitas kesehatan untuk memantau kondisi, status, dan performa seluruh perangkat medis secara langsung melalui dashboard digital yang dapat diakses dari perangkat apa pun.</p>
+                <p>Sistem akan memberikan notifikasi otomatis apabila terdeteksi anomali pada perangkat, seperti suhu yang tidak normal, performa di luar batas toleransi, atau gangguan konektivitas. Hal ini memungkinkan tindakan korektif dilakukan lebih awal sebelum terjadi kerusakan serius.</p>
+                <p>Data monitoring disimpan secara historis dan dapat dianalisis untuk mengidentifikasi pola kerusakan, mengoptimalkan jadwal pemeliharaan, serta meningkatkan efisiensi operasional fasilitas kesehatan secara keseluruhan.</p>
+            </div>
+        </div>
+
+        <div class="modal" id="modal8" onclick="closeModal(this)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeModal(document.getElementById('modal8'))">&times;</span>
+                <img src="assets/icon-sertifikasi.png" onerror="this.src='https://img.icons8.com/fluency/96/certificate.png'" style="width:70px;margin-bottom:15px;">
+                <h3>Sertifikasi & Akreditasi</h3>
+                <p>PT Global Promedika Service membantu fasilitas kesehatan dalam proses pengurusan sertifikasi dan akreditasi perangkat medis sesuai dengan standar nasional (SNARS, Permenkes) maupun internasional (ISO 13485, ISO 17025). Tim kami berpengalaman dalam mendampingi proses audit dan verifikasi dokumen.</p>
+                <p>Kami menyediakan dokumen teknis lengkap termasuk sertifikat kalibrasi, laporan IPM, dan bukti kelayakan operasional alat yang dibutuhkan dalam proses akreditasi rumah sakit. Semua dokumen tersimpan rapi dalam sistem SIMGPS dan dapat diakses dengan mudah saat diperlukan.</p>
+                <p>Dengan dukungan layanan ini, fasilitas kesehatan dapat mempersiapkan proses akreditasi dengan lebih terstruktur, efisien, dan meminimalisir risiko temuan non-conformance terkait pengelolaan alat medis.</p>
+            </div>
+        </div>
+
         <!-- CLIENTS -->
          <section class="clients">
-
             <h2>Trusted By</h2>
-
             <div class="client-track">
-
                 <!-- real -->
                 <img src="assets/logo-siloam.png">
                 <img src="assets/logo-kemenkes.png">
@@ -143,7 +268,6 @@
                 <img src="assets/logo-carolus.jpeg">
                 <img src="assets/logo-rsud-tamansari.jpg">
                 <img src="assets/logo-rs-premier-bintaro.png">
-
                 <!-- duplicate -->
                 <img src="assets/logo-siloam.png">
                 <img src="assets/logo-kemenkes.png">
@@ -154,7 +278,6 @@
                 <img src="assets/logo-carolus.jpeg">
                 <img src="assets/logo-rsud-tamansari.jpg">
                 <img src="assets/logo-rs-premier-bintaro.png">
-
                 <!-- duplicate -->
                 <img src="assets/logo-siloam.png">
                 <img src="assets/logo-kemenkes.png">
@@ -165,57 +288,46 @@
                 <img src="assets/logo-carolus.jpeg">
                 <img src="assets/logo-rsud-tamansari.jpg">
                 <img src="assets/logo-rs-premier-bintaro.png">
-
             </div>
-
          </section>
 
          <!-- TESTIMONI -->
           <section class="testimoni">
             <h2>Testimoni</h2>
-
             <div class="testi-container">
                 <div class="testi-wrapper" id="testiWrapper">
-
                     <div class="testi">
                         <img src="assets/logo-siloam.png" class="testi-logo">
                         <p>"Pelayanan sangat profesional dan cepat."</p>
                         <h4>- RS Siloam</h4>
                     </div>
-
                     <div class="testi">
                         <img src="assets/logo-medistra.png" class="testi-logo">
                         <p>"Sistem sangat membantu operasional kami."</p>
                         <h4>- Medistra Hospital</h4>
                     </div>
-
                     <div class="testi">
                         <img src="assets/logo-hermina.jpeg" class="testi-logo">
                         <p>"Sistem SIMGPS sangat membantu dalam memonitoring alat medis secara real-time."</p>
                         <h4>- RS Hermina</h4>
                     </div>
-
                     <div class="testi">
                         <img src="assets/logo-rs-pelni.png" class="testi-logo">
                         <p>"Tim support sangat responsif dan profesional dalam menangani kebutuhan kami."</p>
                         <h4>- RS Pelni</h4>
                     </div>
-
                     <div class="testi">
                         <img src="assets/logo-carolus.jpeg" class="testi-logo">
                         <p>"Integrasi sistem berjalan lancar dan meningkatkan efisiensi operasional."</p>
                         <h4>- RS Carolus</h4>
                     </div>
-
                     <div class="testi">
                         <img src="assets/logo-rsud-tamansari.jpg" class="testi-logo">
                         <p>"Pelayanan kalibrasi dan maintenance sangat memuaskan dan tepat waktu."</p>
                         <h4>- RSUD Tamansari</h4>
                     </div>
-
                 </div>
             </div>
-
             <div class="slider-controls">
                 <button class="slider-btn" id="testiPrev">&#8592;</button>
                 <div class="dots" id="testiDots"></div>
@@ -223,7 +335,7 @@
             </div>
           </section>
 
-          <!-- BACK-TO-TOP BUTTON -->
+          <!-- [6] BACK-TO-TOP BUTTON - cursor pointer ditambahkan via CSS -->
            <button id="topBtn">↑</button>
           
           <!-- FLOATING WHATSAPP -->
@@ -231,22 +343,20 @@
             <i class="fa-brands fa-whatsapp"></i>
            </a>
 
-         <!-- GALLERY -->
-
+         <!-- [5] GALLERY - foto pakai loading="lazy" + ukuran dibatasi untuk performa -->
          <section class="gallery" id="gallery">
-
             <h2>Gallery</h2>
-
-                <div class="gallery-grid">
-                    <img src="assets/img-1.JPG">
-                    <img src="assets/img-2.JPG">
-                    <img src="assets/img-3.JPG">
-                    <img src="assets/img-4.JPG">
-                </div>
-                <div class="popup" id="popup">
-                    <img id="popup-img">
-                </div>
-            </section>
+            <div class="gallery-grid">
+                <!-- [5] loading="lazy" dan width/height hint untuk compress/performa -->
+                <img src="assets/img-1.JPG" loading="lazy" width="600" height="400">
+                <img src="assets/img-2.JPG" loading="lazy" width="600" height="400">
+                <img src="assets/img-3.JPG" loading="lazy" width="600" height="400">
+                <img src="assets/img-4.JPG" loading="lazy" width="600" height="400">
+            </div>
+            <div class="popup" id="popup">
+                <img id="popup-img">
+            </div>
+        </section>
 
         <section class="cta">
             <h2>Mari Berkolaborasi</h2>
@@ -258,7 +368,6 @@
          <section class="contact" id="contact">
     <h2>Contact</h2>
     <div class="contact-wrapper">
-
         <!-- LEFT: MAP -->
         <div class="contact-map">
             <iframe
@@ -270,18 +379,14 @@
                 loading="lazy">
             </iframe>
         </div>
-
         <!-- RIGHT: FORM -->
         <div class="contact-form">
             <input type="text" id="inputNama" placeholder="Nama Anda">
             <span class="error-msg" id="errNama"></span>
-
             <input type="email" id="inputEmail" placeholder="Email Anda">
             <span class="error-msg" id="errEmail"></span>
-
             <input type="tel" id="inputPhone" placeholder="Nomor Telepon (contoh: 08123456789)">
             <span class="error-msg" id="errPhone"></span>
-
             <select id="inputSubjek">
                 <option value="" disabled selected>Pilih Subjek</option>
                 <option>Request Akun Demo</option>
@@ -290,14 +395,12 @@
                 <option>Keluhan & Saran</option>
             </select>
             <span class="error-msg" id="errSubjek"></span>
-
             <select id="tipeSelect" onchange="toggleInstansi()">
                 <option value="" disabled selected>Instansi atau Perorangan?</option>
                 <option value="instansi">Instansi</option>
                 <option value="perorangan">Perorangan</option>
             </select>
             <span class="error-msg" id="errTipe"></span>
-
             <select id="instansiSelect" style="display:none;">
                 <option value="" disabled selected>Pilih Instansi</option>
                 <option>RS Siloam</option>
@@ -312,10 +415,8 @@
                 <option>Kementerian Kesehatan RI</option>
             </select>
             <span class="error-msg" id="errInstansi"></span>
-
             <textarea id="inputPesan" placeholder="Pesan Anda..."></textarea>
             <span class="error-msg" id="errPesan"></span>
-
             <button type="button" onclick="submitForm()">Kirim Pesan</button>
         </div>
     </div>
@@ -323,17 +424,14 @@
 
          <!-- FOOTER -->
          <div class="footer-container">
-
             <!-- LEFT -->
              <div class="footer-left">
                 <h3>SIMGPS</h3>
                 <p>PT Global Promedika Service</p>
                 <p>Jl. Penjernihan 1 No.38, RW.8, Bend. Hilir, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10210</p>
              </div>
-             
              <!-- RIGHT -->
               <div class="footer-right">
-
                 <div>
                     <h4>Navigasi</h4>
                     <a href="#home">Home</a>
@@ -342,31 +440,28 @@
                     <a href="#gallery">Gallery</a>
                     <a href="#contact">Contact</a>
                 </div>
-
                 <div>
                     <h4>Produk</h4>
                     <a href="#">SIMGPS</a>
                     <a href="#">Monitoring</a>
                 </div>
-
                 <div>
                     <h4>Dukungan</h4>
                     <a href="https://wa.me" target="_blank">WhatsApp</a>
                     <a href="https://globalpromedika.co.id/tentang-kami" target="_blank">Website</a>
                 </div>
-
               </div>
          </div>
 
-         <!-- FOOTER -->
+         <!-- [7] FOOTER BOTTOM - diperkecil -->
          <footer>
             <div class="footer-bottom">
                 <p>© 2026 PT Global Promedika Service</p>
                 <div class="social">
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/index.php/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </footer>
