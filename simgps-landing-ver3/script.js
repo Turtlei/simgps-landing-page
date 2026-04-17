@@ -10,9 +10,18 @@ window.addEventListener("scroll", () => {
 // MENU TOGGLE
 const menuToggle = document.getElementById("menu-toggle");
 const nav = document.querySelector(".nav");
+
 menuToggle.addEventListener("click", () => {
     nav.classList.toggle("show");
     menuToggle.classList.toggle("active");
+});
+
+// AUTO CLOSE NAV saat klik link (mobile burger)
+document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("show");
+        menuToggle.classList.remove("active");
+    });
 });
 
 // HERO SLIDER
@@ -201,12 +210,12 @@ document.getElementById("topBtn").addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// [4] SERVICE MODAL - open & close
+// SERVICE MODAL
 function openModal(id) {
     const modal = document.getElementById(id);
     if (!modal) return;
     modal.classList.add("show");
-    document.body.style.overflow = "hidden"; // prevent scroll behind modal
+    document.body.style.overflow = "hidden";
 }
 
 function closeModal(modal) {
@@ -214,7 +223,6 @@ function closeModal(modal) {
     document.body.style.overflow = "";
 }
 
-// Tutup modal kalau tekan ESC
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
         document.querySelectorAll(".modal.show").forEach(m => closeModal(m));
