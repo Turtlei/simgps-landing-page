@@ -780,7 +780,7 @@ footer {
     padding: 0;
 }
 
-.footer-container {
+/* .footer-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     padding: 50px 40px;
@@ -789,18 +789,60 @@ footer {
     background-position: center;
     color: white;
     gap: 40px;
+} */
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+    background: linear-gradient(rgba(15, 76, 129, 0.85), rgba(15, 76, 129, 0.85)), url("assets/banner-3.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    align-items: center;
+    text-align: center;
 }
 
-.footer-left { max-width: 300px; }
+.footer-left { 
+    max-width: 300px; 
+}
 
-.footer-right {
+/* .footer-right {
     display: flex;
     justify-content: space-between;
     gap: 60px;
     margin-left: auto;
 }
 
-.footer-right div { min-width: 120px; }
+.footer-right div { min-width: 120px; } */
+
+.footer-right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.footer-right div {
+    min-width: 100px;
+}
+
+@media(min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 60px 80px;
+    }
+
+    .footer-right {
+        width: auto;
+        justify-content: flex-end;
+        text-align: left;
+    }
+}
 
 .footer-right a {
     display: block;
@@ -917,6 +959,15 @@ footer {
     .contact-map { order: 1; height: 250px; }
     .contact-form { order: 2; }
 
+    .footer-left {
+        max-width: 400px;
+        margin-bottom: 30px;
+    }
+
+    .footer-left p {
+        margin-bottom: 10px;
+    }
+    
     .footer-right {
         flex-direction: row;
         justify-content: space-between;
