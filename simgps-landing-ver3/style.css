@@ -79,8 +79,6 @@ section {
 
 /*
  * NAV MOBILE
- * Pakai visibility + opacity (bukan display:none/flex) supaya
- * CSS transition bisa animate OPEN dan CLOSE dengan smooth.
  */
 .nav {
     display: flex;
@@ -458,7 +456,10 @@ section {
     to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* CLIENTS */
+/* =============================================
+   [REVISI 1] CLIENTS — Desktop scroll + Mobile carousel
+   ============================================= */
+
 .clients {
     padding: 60px 20px;
     text-align: center;
@@ -466,10 +467,15 @@ section {
     overflow: hidden;
 }
 
+/* Desktop: marquee auto-scroll */
+.client-marquee {
+    overflow: hidden;
+}
+
 .client-track {
     display: flex;
     gap: 50px;
-    animation: scrollLogo 25s linear infinite;
+    animation: scrollLogo 20s linear infinite; /* sedikit lebih cepat */
     align-items: center;
 }
 
@@ -488,10 +494,49 @@ section {
 
 @keyframes scrollLogo {
     0%  { transform: translateX(0); }
-    100%{ transform: translateX(-50%); }
+    100%{ transform: translateX(-33.33%); }
 }
 
-/* TESTIMONI */
+/* Mobile: carousel */
+.client-carousel {
+    position: relative;
+}
+
+.client-carousel-wrapper {
+    display: flex;
+    transition: transform 0.4s ease;
+    gap: 0;
+}
+
+.client-carousel-wrapper img {
+    flex: 0 0 100%;
+    height: 80px;
+    width: 100%;
+    object-fit: contain;
+    padding: 0 40px;
+}
+
+.client-carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+/* Visibility helpers */
+.desktop-only { display: block; }
+.mobile-only  { display: none; }
+
+@media(max-width: 767px) {
+    .desktop-only { display: none; }
+    .mobile-only  { display: block; }
+}
+
+/* =============================================
+   [REVISI 2] TESTIMONI — truncate + modal
+   ============================================= */
+
 .testimoni {
     padding: 80px 20px;
     text-align: center;
@@ -517,7 +562,59 @@ section {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.testi:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(15, 76, 129, 0.2);
+}
+
+/* Text truncation — max 3 lines */
+.testi-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    text-align: center;
+    flex: 1;
+}
+
+.testi-read-more {
+    font-size: 12px;
+    color: #0f4c81;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 6px;
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.testi-read-more:hover { opacity: 1; }
+
+/* Testimoni Modal */
+.testi-modal-content {
+    max-width: 480px !important;
+}
+
+.testi-modal-content .testi-logo {
+    width: 90px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* =============================================
+   SLIDER CONTROLS (shared)
+   ============================================= */
 
 .slider-controls {
     display: flex;
@@ -645,7 +742,7 @@ section {
     transform: translateY(-3px);
 }
 
-/* FIX WA FLOAT - garis hilang */
+/* FIX WA FLOAT */
 .wa-float {
     position: fixed;
     bottom: 50px;
@@ -660,7 +757,7 @@ section {
     border-radius: 50%;
     font-size: 30px;
     z-index: 999;
-    text-decoration: none;  /* hilangkan underline bawaan <a> */
+    text-decoration: none;
     line-height: 1;
     border: none;
     outline: none;
@@ -780,17 +877,6 @@ footer {
     padding: 0;
 }
 
-/* .footer-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 50px 40px;
-    background: linear-gradient(rgba(15, 76, 129, 0.75), rgba(15, 76, 129, 0.75)), url("assets/banner-3.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    gap: 40px;
-} */
-
 .footer-container {
     display: flex;
     flex-direction: column;
@@ -806,15 +892,6 @@ footer {
 .footer-left { 
     max-width: 300px; 
 }
-
-/* .footer-right {
-    display: flex;
-    justify-content: space-between;
-    gap: 60px;
-    margin-left: auto;
-}
-
-.footer-right div { min-width: 120px; } */
 
 .footer-right {
     display: flex;
@@ -852,6 +929,10 @@ footer {
     transition: 0.3s;
 }
 
+.footer-right a:hover {
+    opacity: 0.8;
+}
+
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -864,6 +945,19 @@ footer {
 }
 
 .footer-bottom p { margin: 0; font-size: 15px; }
+
+/* [REVISI 3] Terms & Conditions link di footer */
+.footer-tnc-link {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-tnc-link:hover {
+    color: white;
+    text-decoration: underline;
+}
 
 .footer-bottom .social { display: flex; gap: 12px; }
 
@@ -892,7 +986,6 @@ footer {
         background: none;
         width: auto;
 
-        /* reset semua state mobile */
         opacity: 1 !important;
         visibility: visible !important;
         transform: none !important;
@@ -940,20 +1033,6 @@ footer {
         max-width: 600px;
         z-index: 5;
     }
-    
-    .client-track {
-        animation: none;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 20px;
-        padding: 10px;
-    }
-
-    .client-track img {
-        scroll-snap-align: center;
-        flex: 0 0 auto;
-        height: 60px;
-    }
 
     .contact-wrapper { flex-direction: column; }
     .contact-map { order: 1; height: 250px; }
@@ -987,4 +1066,159 @@ footer {
     }
 
     .footer-bottom p { order: 2; }
+}
+
+/* =============================================
+   FAQ PAGE STYLES
+   ============================================= */
+.page-hero {
+    background: linear-gradient(135deg, #0f4c81, #1e6fb9);
+    color: white;
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.page-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+}
+
+.faq-category {
+    margin-bottom: 40px;
+}
+
+.faq-category h3 {
+    font-size: 18px;
+    color: #0f4c81;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0ecf8;
+}
+
+.faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 15px rgba(15, 76, 129, 0.1);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: white;
+    border: none;
+    padding: 18px 20px;
+    font-size: 15px;
+    font-family: Segoe UI;
+    color: #222;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.faq-question:hover {
+    background: #f0f7ff;
+}
+
+.faq-question.active {
+    background: #0f4c81;
+    color: white;
+}
+
+.faq-question .faq-icon {
+    font-size: 18px;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.faq-question.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    background: #fafcff;
+}
+
+.faq-answer.open {
+    max-height: 400px;
+    padding: 16px 20px;
+}
+
+.faq-answer p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* =============================================
+   TERMS PAGE STYLES
+   ============================================= */
+.terms-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+}
+
+.terms-section h2 {
+    font-size: 22px;
+    color: #0f4c81;
+    margin: 30px 0 12px;
+}
+
+.terms-section h2:first-child {
+    margin-top: 0;
+}
+
+.terms-section p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+.terms-section ul {
+    margin: 8px 0 16px 20px;
+}
+
+.terms-section ul li {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 4px;
+}
+
+.terms-last-updated {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.terms-divider {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 24px 0;
 }

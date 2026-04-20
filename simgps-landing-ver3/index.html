@@ -18,7 +18,6 @@
     <meta name="twitter:description" content="Solusi modern untuk pengelolaan perangkat medis">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/Turtlei/simgps-landing-page/main/simgps-landing-ver3/assets/banner-1.jpg">    
 
-    <!-- [1] SHORTCUT ICON / FAVICON -->
     <link rel="icon" href="assets/favicon.png" type="image/png">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -37,6 +36,7 @@
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#gallery">Gallery</a>
+            <a href="faq.html">FAQ</a>
             <a href="#contact">Contact</a>
         </nav>
 
@@ -81,7 +81,6 @@
         <img src="assets/1.jpg">
         <div class="about-text">
         <h2>Tentang Kami</h2>
-        <!-- [3] Paragraf justify -->
         <p>
             Didirikan pada tahun 2007, PT. Global Promedika Service merupakan salah satu laboratorium terakreditasi di Indonesia yang menyediakan layanan kalibrasi dan pemeliharaan peralatan medis. Dengan dukungan lebih dari 70 tenaga elektromedis bersertifikasi, perusahaan berkomitmen memberikan layanan purna jual serta Inspection & Preventive Maintenance (IPM) untuk memastikan keamanan dan kualitas penggunaan alat medis di berbagai fasilitas kesehatan.
         </p>
@@ -106,7 +105,7 @@
        <!-- DIVIDER -->
         <div class="divider"></div>
 
-       <!-- [4] SERVICES - 8 cards dengan modal popup -->
+       <!-- SERVICES -->
         <section class="services fade-up" id="services">
 
             <h2>Layanan Kami</h2>
@@ -255,77 +254,115 @@
         </div>
 
         <!-- CLIENTS -->
+        <!-- [REVISI 1] Trusted By: Desktop tetap auto-scroll, Mobile tambah carousel + auto slide -->
          <section class="clients">
             <h2>Trusted By</h2>
-            <div class="client-track">
-                <!-- real -->
-                <img src="assets/logo-siloam.png">
-                <img src="assets/logo-kemenkes.png">
-                <img src="assets/logo-medistra.png">
-                <img src="assets/logo-kemhan.png">
-                <img src="assets/logo-rs-pelni.png">
-                <img src="assets/logo-hermina.jpeg">
-                <img src="assets/logo-carolus.jpeg">
-                <img src="assets/logo-rsud-tamansari.jpg">
-                <img src="assets/logo-rs-premier-bintaro.png">
-                <!-- duplicate -->
-                <img src="assets/logo-siloam.png">
-                <img src="assets/logo-kemenkes.png">
-                <img src="assets/logo-medistra.png">
-                <img src="assets/logo-kemhan.png">
-                <img src="assets/logo-rs-pelni.png">
-                <img src="assets/logo-hermina.jpeg">
-                <img src="assets/logo-carolus.jpeg">
-                <img src="assets/logo-rsud-tamansari.jpg">
-                <img src="assets/logo-rs-premier-bintaro.png">
-                <!-- duplicate -->
-                <img src="assets/logo-siloam.png">
-                <img src="assets/logo-kemenkes.png">
-                <img src="assets/logo-medistra.png">
-                <img src="assets/logo-kemhan.png">
-                <img src="assets/logo-rs-pelni.png">
-                <img src="assets/logo-hermina.jpeg">
-                <img src="assets/logo-carolus.jpeg">
-                <img src="assets/logo-rsud-tamansari.jpg">
-                <img src="assets/logo-rs-premier-bintaro.png">
+
+            <!-- Desktop: auto-scroll marquee (tidak berubah) -->
+            <div class="client-marquee desktop-only">
+                <div class="client-track">
+                    <!-- real -->
+                    <img src="assets/logo-siloam.png">
+                    <img src="assets/logo-kemenkes.png">
+                    <img src="assets/logo-medistra.png">
+                    <img src="assets/logo-kemhan.png">
+                    <img src="assets/logo-rs-pelni.png">
+                    <img src="assets/logo-hermina.jpeg">
+                    <img src="assets/logo-carolus.jpeg">
+                    <img src="assets/logo-rsud-tamansari.jpg">
+                    <img src="assets/logo-rs-premier-bintaro.png">
+                    <!-- duplicate -->
+                    <img src="assets/logo-siloam.png">
+                    <img src="assets/logo-kemenkes.png">
+                    <img src="assets/logo-medistra.png">
+                    <img src="assets/logo-kemhan.png">
+                    <img src="assets/logo-rs-pelni.png">
+                    <img src="assets/logo-hermina.jpeg">
+                    <img src="assets/logo-carolus.jpeg">
+                    <img src="assets/logo-rsud-tamansari.jpg">
+                    <img src="assets/logo-rs-premier-bintaro.png">
+                    <!-- duplicate -->
+                    <img src="assets/logo-siloam.png">
+                    <img src="assets/logo-kemenkes.png">
+                    <img src="assets/logo-medistra.png">
+                    <img src="assets/logo-kemhan.png">
+                    <img src="assets/logo-rs-pelni.png">
+                    <img src="assets/logo-hermina.jpeg">
+                    <img src="assets/logo-carolus.jpeg">
+                    <img src="assets/logo-rsud-tamansari.jpg">
+                    <img src="assets/logo-rs-premier-bintaro.png">
+                </div>
+            </div>
+
+            <!-- Mobile: carousel dengan auto slide + manual swipe -->
+            <div class="client-carousel mobile-only">
+                <div class="client-carousel-wrapper" id="clientCarouselWrapper">
+                    <img src="assets/logo-siloam.png">
+                    <img src="assets/logo-kemenkes.png">
+                    <img src="assets/logo-medistra.png">
+                    <img src="assets/logo-kemhan.png">
+                    <img src="assets/logo-rs-pelni.png">
+                    <img src="assets/logo-hermina.jpeg">
+                    <img src="assets/logo-carolus.jpeg">
+                    <img src="assets/logo-rsud-tamansari.jpg">
+                    <img src="assets/logo-rs-premier-bintaro.png">
+                </div>
+                <div class="client-carousel-controls">
+                    <button class="slider-btn" id="clientPrev">&#8592;</button>
+                    <div class="dots" id="clientDots"></div>
+                    <button class="slider-btn" id="clientNext">&#8594;</button>
+                </div>
             </div>
          </section>
 
-         <!-- TESTIMONI -->
+         <!-- [REVISI 2] TESTIMONI: text truncate + modal full text -->
           <section class="testimoni">
             <h2>Testimoni</h2>
             <div class="testi-container">
                 <div class="testi-wrapper" id="testiWrapper">
-                    <div class="testi">
+
+                    <div class="testi" onclick="openTestiModal(0)">
                         <img src="assets/logo-siloam.png" class="testi-logo">
-                        <p>"Pelayanan sangat profesional dan cepat."</p>
+                        <p class="testi-text">"Pelayanan sangat profesional dan cepat. Tim SIMGPS selalu siap membantu kapan pun kami membutuhkan dukungan teknis."</p>
                         <h4>- RS Siloam</h4>
+                        <span class="testi-read-more">Baca selengkapnya</span>
                     </div>
-                    <div class="testi">
+
+                    <div class="testi" onclick="openTestiModal(1)">
                         <img src="assets/logo-medistra.png" class="testi-logo">
-                        <p>"Sistem sangat membantu operasional kami."</p>
+                        <p class="testi-text">"Sistem sangat membantu operasional kami. Semua data alat medis kini tersentralisasi dan mudah diakses oleh seluruh tim."</p>
                         <h4>- Medistra Hospital</h4>
+                        <span class="testi-read-more">Baca selengkapnya</span>
                     </div>
-                    <div class="testi">
+
+                    <div class="testi" onclick="openTestiModal(2)">
                         <img src="assets/logo-hermina.jpeg" class="testi-logo">
-                        <p>"Sistem SIMGPS sangat membantu dalam memonitoring alat medis secara real-time."</p>
+                        <p class="testi-text">"Sistem SIMGPS sangat membantu dalam memonitoring alat medis secara real-time. Kami dapat mendeteksi anomali lebih cepat dan mengambil tindakan sebelum alat rusak."</p>
                         <h4>- RS Hermina</h4>
+                        <span class="testi-read-more">Baca selengkapnya</span>
                     </div>
-                    <div class="testi">
+
+                    <div class="testi" onclick="openTestiModal(3)">
                         <img src="assets/logo-rs-pelni.png" class="testi-logo">
-                        <p>"Tim support sangat responsif dan profesional dalam menangani kebutuhan kami."</p>
+                        <p class="testi-text">"Tim support sangat responsif dan profesional dalam menangani kebutuhan kami. Setiap keluhan ditindaklanjuti dengan cepat dan solusi yang tepat sasaran."</p>
                         <h4>- RS Pelni</h4>
+                        <span class="testi-read-more">Baca selengkapnya</span>
                     </div>
-                    <div class="testi">
+
+                    <div class="testi" onclick="openTestiModal(4)">
                         <img src="assets/logo-carolus.jpeg" class="testi-logo">
-                        <p>"Integrasi sistem berjalan lancar dan meningkatkan efisiensi operasional."</p>
+                        <p class="testi-text">"Integrasi sistem berjalan lancar dan meningkatkan efisiensi operasional. Proses kalibrasi dan IPM kini terjadwal otomatis sehingga tidak ada alat yang terlewat."</p>
                         <h4>- RS Carolus</h4>
+                        <span class="testi-read-more">Baca selengkapnya</span>
                     </div>
-                    <div class="testi">
+
+                    <div class="testi" onclick="openTestiModal(5)">
                         <img src="assets/logo-rsud-tamansari.jpg" class="testi-logo">
-                        <p>"Pelayanan kalibrasi dan maintenance sangat memuaskan dan tepat waktu."</p>
+                        <p class="testi-text">"Pelayanan kalibrasi dan maintenance sangat memuaskan dan tepat waktu. Laporan hasil kalibrasi langsung tersimpan di sistem dan bisa diakses kapan saja."</p>
                         <h4>- RSUD Tamansari</h4>
+                        <span class="testi-read-more">Baca selengkapnya</span>
                     </div>
+
                 </div>
             </div>
             <div class="slider-controls">
@@ -335,18 +372,27 @@
             </div>
           </section>
 
-          <!-- [6] BACK-TO-TOP BUTTON - cursor pointer ditambahkan via CSS -->
+          <!-- TESTIMONI MODAL -->
+          <div class="modal testi-modal" id="testiModal" onclick="closeTestiModal()">
+            <div class="modal-content testi-modal-content" onclick="event.stopPropagation()">
+                <span class="close" onclick="closeTestiModal()">&times;</span>
+                <img id="testiModalLogo" class="testi-logo" style="margin: 0 auto 15px; display:block;">
+                <h3 id="testiModalName" style="color:#0f4c81; margin-bottom:15px;"></h3>
+                <p id="testiModalText" style="font-size:15px; color:#444; line-height:1.8; text-align:justify;"></p>
+            </div>
+          </div>
+
+          <!-- BACK-TO-TOP BUTTON -->
            <button id="topBtn">↑</button>
           
           <!-- FLOATING WHATSAPP -->
            <a href="https://wa.me/" class="wa-float" target="_blank"><i class="fa-brands fa-whatsapp"></i>
            </a>
 
-         <!-- [5] GALLERY - foto pakai loading="lazy" + ukuran dibatasi untuk performa -->
+         <!-- GALLERY -->
          <section class="gallery" id="gallery">
             <h2>Gallery</h2>
             <div class="gallery-grid">
-                <!-- [5] loading="lazy" dan width/height hint untuk compress/performa -->
                 <img src="assets/img-1.JPG" loading="lazy" width="600" height="400">
                 <img src="assets/img-2.JPG" loading="lazy" width="600" height="400">
                 <img src="assets/img-3.JPG" loading="lazy" width="600" height="400">
@@ -437,6 +483,7 @@
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
                     <a href="#gallery">Gallery</a>
+                    <a href="faq.html">FAQ</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div>
@@ -452,10 +499,10 @@
               </div>
          </div>
 
-         <!-- [7] FOOTER BOTTOM - diperkecil -->
+         <!-- FOOTER BOTTOM -->
          <footer>
             <div class="footer-bottom">
-                <p>© 2026 PT Global Promedika Service</p>
+                <p>© 2026 PT Global Promedika Service &nbsp;|&nbsp; <a href="terms.html" class="footer-tnc-link">Terms & Conditions</a></p>
                 <div class="social">
                     <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
